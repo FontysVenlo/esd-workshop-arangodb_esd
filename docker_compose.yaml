@@ -1,1 +1,1 @@
-docker run --pull=always --publish=8560:8529 --env ARANGO_ROOT_PASSWORD=12345 --detach --container_name:arangoDBContainer  arangodb:latest
+docker run --pull=always --publish=8560:8529 --env ARANGO_ROOT_PASSWORD=12345 --detach --name arangoDBContainer  arangodb:latest
