@@ -1,5 +1,11 @@
 ## Schemas and queries experiments
 
+#### Short notes
+
+_from and _to are special fields that should not be included in required fields list as it will lead to errors; it is fine to enforce field types and formats
+
+additionalProperties has to be set to true for edge collections
+
 #### carOwnership schema
 
 {
@@ -23,7 +29,7 @@
         "format": "date"  
       }
     },
-    "additionalProperties": false
+    "additionalProperties": true
   },
   "level": "strict",
   "message": "Each ownership edge must connect an owner to a car. 'beginDate' and 'endDate are optional, and both' must be a valid ISO date string if present."
@@ -107,3 +113,8 @@ FOR ownership IN [
   }
 ]
 INSERT ownership INTO carOwnership
+
+#### select from carOwnership
+
+FOR ownership IN carOwnership
+  RETURN ownership
