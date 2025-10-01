@@ -27,7 +27,7 @@
     "additionalProperties": false
   },
   "level": "strict",
-  "message": "Each ownership edge must connect an owner to a car. 'since' is optional, and 'endDate' must be a valid ISO date string if present."
+  "message": "Each ownership edge must connect an owner to a car. 'beginDate' and 'endDate are optional, and both' must be a valid ISO date string if present."
 }
 
 #### cars schema
