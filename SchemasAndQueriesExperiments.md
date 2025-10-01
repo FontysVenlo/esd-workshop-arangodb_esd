@@ -23,7 +23,6 @@
         "format": "date"  
       }
     },
-    "required": ["_from", "_to"],
     "additionalProperties": false
   },
   "level": "strict",
