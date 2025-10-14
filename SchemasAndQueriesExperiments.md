@@ -4,8 +4,6 @@
 
 _from and _to are special fields that should not be included in required fields list as it will lead to errors; it is fine to enforce field types and formats
 
-additionalProperties has to be set to true for edge collections
-
 #### carOwnership schema
 
 {
@@ -20,7 +18,7 @@ additionalProperties has to be set to true for edge collections
         "type": "string",
         "pattern": "^cars/.*"
       },
-      "since": {
+      "beginDate": {
         "type": "string",
         "format": "date"
       },
