@@ -27,3 +27,4 @@
 - discuss real-world use cases of such a database
 - Q&A
 - share resources for further reading
+- one db for all assignments or multiple?
