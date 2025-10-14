@@ -20,3 +20,10 @@
 
 - Create graph with multiple hops.
 - run complex queries on it
+
+# Other
+
+- recap key concepts of ArangoDB
+- discuss real-world use cases of such a database
+- Q&A
+- share resources for further reading
