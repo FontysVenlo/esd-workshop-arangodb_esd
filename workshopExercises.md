@@ -14,6 +14,6 @@ For this series of exercises, we will be creating a database for such a service.
 2. Create and enforce schemas for each collection.
  - **Attention!** In edge collections, the "_from" and "_to" fields also have to be defined as part of the schema.
 
-3. Insert multiple entries into these collections (around 20 for each).
+3. Insert multiple entries into these collections (around 10-20 for each).
  - **Note** It is possible for one person to own multiple cars.
  - **Note** It is possible that one car has had more than one owner.
