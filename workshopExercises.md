@@ -7,11 +7,12 @@ For this series of exercises, we will be creating a database for such a service.
 #### Exercise 1
 
 1. Create a database with three collections:
- - owner;
- - car;
- - car ownership (edge collection); 
+ - owner (document collection);
+ - car (document collection);
+ - carOwnership (edge collection); 
 
-2. Create and enforce schemas for each collection.
+2. Create and enforce schemas for each collection: (move to different, more advanced exercise?)
+ - 
  - **Attention!** In edge collections, the "_from" and "_to" fields also have to be defined as part of the schema.
 
 3. Insert multiple entries into these collections (around 10-20 for each).
