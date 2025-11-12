@@ -29,31 +29,35 @@ For this series of exercises, we will be creating a database for such a service.
 
 ### Introduction
 
+Prerequisite: 
+- have Docker running (Docker Dekstop makes it easier to track containers)
+- have a container with arangoDB running (see docker_compose.yaml)
 For this set of exercises, we will be creating a database for car ownership history.
 
 #### Exercises
 
 1. Create a new database and user.
- - Give the new user **Administrate** rights over this new database and **No access** for default option. Log in to the new database with this user for the following exercises.
+ - Give the new user **Administrate** permissions over this new database and **No access** for default option. Log out of the _root database (top-right of the screen, right next to username) Log in to the new database with this user for the following exercises.
 
 2. Add three collections:
  - owner (document collection);
  - car (document collection);
  - carOwnership (edge collection, from owner to car); 
 
-3. Insert multiple entries into these collections (around 5-10 for each).
+3. Insert multiple entries into these collections (around 5-10 for each) using web UI (click on collection -> contents -> green plus sign).
 Attributes for each collection:
  - owner: firstName, lastName, age;
  - car: brand, model, color, dateOfFirstRegistration;
- - carOwnership: beginDate (mandatory), endDate (optional, if car is still being owned by a particular owner)
+ - carOwnership: _from (entry from owner collection), _to (entry from car collection) beginDate (mandatory), endDate (optional, if car is still being owned by a particular owner)
 
+ - **Note** Make sure to specify the *_key* attribute to assign specific key values instead of auto-generated ones.
  - **Note** It is possible for one person to own multiple cars.
  - **Note** It is possible for one car to have had more than one owner over its life.
 
-4. Create a **GeneralGraph** with the collections made before as its parameters.
+4. Create a **GeneralGraph** with the collections made before as its parameters and load the full graph.
 
 5. Run some basic queries for selecting, deleting based on an attribute, inserting new entries.
 
-6. Create and enforce schemas for each collection: (move to different, more advanced exercise?)
+6. Create and enforce schemas for each collection:
  - 
  - **Attention!** In edge collections, the "_from" and "_to" fields also have to be defined as part of the schema.
