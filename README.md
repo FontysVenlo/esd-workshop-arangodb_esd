@@ -1,13 +1,15 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/t1er-CAW)
-# ESD template
+Setup
 
-Please make sure all artifacts are in this GitHub repository.  
-That includes:
+To run the workshop, you only need Docker installed.
 
-- Code
-- Workshop materials
-- Presentation (if applicable)
-- References
-- Docker (compose) file (if applicable)
+Open your terminal or command prompt.
 
-Due date = 16 november 2025 at 23:59
+Run the following command to start the database container:
+
+docker run --pull=always --publish=8560:8529 --env ARANGO_ROOT_PASSWORD=12345 --detach --name arangoDBContainer arangodb:latest
+
+
+Once the container is running, open your browser and go to:
+http://localhost:8560/
+
+You’re ready to start using ArangoDB for the workshop!
