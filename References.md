@@ -1,22 +1,32 @@
-Here the references will be saved!# 🗃️ Database Resources
+## References
 
-A small collection of useful links and explanations about different types of databases and data management concepts.
+### Types of Databases
+- GeeksforGeeks — *Different kinds of databases*  
+  https://www.geeksforgeeks.org/dbms/types-of-databases/
 
----
+### Database Management Systems
+- Dataversity — *Types of Database Management Systems*  
+  https://www.dataversity.net/articles/types-of-database-management-systems/
 
-### 📘 Different Kinds of Databases  
-Learn about the various types of databases and their characteristics:  
-👉 [GeeksforGeeks - Types of Databases](https://www.geeksforgeeks.org/dbms/types-of-databases/)
+### Data Lake (Dutch Explanation)
+- Microsoft Azure — *Wat is een Data Lake?*  
+  https://azure.microsoft.com/nl-nl/resources/cloud-computing-dictionary/what-is-a-data-lake/
 
----
+### ArangoDB
+- Trevor Sullivan (YouTube) — *Setting up ArangoDB & understanding collections*  
+  https://www.youtube.com/watch?v=dlaTKOf-Fj0
 
-### 🧠 Database Management Systems  
-An overview of different types of database management systems (DBMS) and how they function:  
-👉 [DATAVERSITY - Types of Database Management Systems](https://www.dataversity.net/articles/types-of-database-management-systems/)
+- Official ArangoDB Documentation  
+  https://docs.arango.ai/arangodb/
 
----
+### Community Discussions
+- Reddit — *Experiences with ArangoDB (pros, cons, comparisons)*  
+  https://www.reddit.com/r/Database/comments/49av49/anybody_here_used_arangodb_and_have_anything_to/
 
-### 🇳🇱 Dutch Explanation of a Data Lake  
-A clear Dutch explanation of what a data lake is and how it works in cloud environments:  
-👉 [Microsoft Azure - Wat is een Data Lake?](https://azure.microsoft.com/nl-nl/resources/cloud-computing-dictionary/what-is-a-data-lake)
+### Known Issues
+- GitHub Issue — *ArangoDB write-write conflict details*  
+  https://github.com/arangodb/arangodb/issues/9702
 
+### Comparisons
+- PuppyGraph — *ArangoDB vs Neo4j comparison & reasoning*  
+  https://www.puppygraph.com/blog/arangodb-vs-neo4j#:~:text=ArangoDB%2C%20to%20serve%20such%20use,built%20for%20highly%2Dconnected%20data.
