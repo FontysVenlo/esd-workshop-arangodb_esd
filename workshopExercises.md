@@ -29,7 +29,9 @@ Attributes for each collection:
 
 5. Run some basic queries for selecting, deleting based on an attribute, inserting new entries.
 
-6. Create and enforce schemas for each collection:
+6. Create a new document collection named "reports" for handling accident reports. Create a new edge collection called "involvedIn". Insert entries in such a way that a report is connected to both a car and its owner from their relevant collections. Create a new GeneralGraph showing their relationship.
+
+7. Create and enforce schemas for each collection:
  - 
  - **Attention!** In edge collections, the "_from" and "_to" fields also have to be defined as part of the schema.
 
