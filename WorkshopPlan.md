@@ -1,149 +1,139 @@
+# Workshop Plan: Introduction to Databases and ArangoDB
 
-## 1. Introduction to Arango DB
+## 1. Introduction & Icebreaker
 
-- **What is Arango DB?**
-    
-    - A **multi-model database**: supports document, graph, and key/value models in one system.
-        
-    - Query language: **AQL (Arango Query Language)**.
-        
-    - Used in recommendation engines, fraud detection, IoT, knowledge graphs, and more.
-        
-- **Key Features:**
-    
-    - Runs natively in a **Docker container**.
-        
-    - Comes with a **web interface** at [http://localhost:8529](http://localhost:8529/).
-        
-    - Flexible data modeling: combine documents and graphs in the same query.
-        
+* Introduce yourselves and participants.
+* Ask participants about their preferred databases, why they choose them, and what they use them for.
+* Discuss differences between databases and database management systems (DBMS).
 
----
+  * **Database:** The physical storage of data.
+  * **DBMS:** The software that manages, queries, and maintains the database.
 
-## 2. Competitors & Differences
+## 2. Overview of Database Types
 
-**Closest competitors:**
+### 2.1 Flat File Database
 
-- **MongoDB** (document-oriented only)
-    
-- **Neo4j** (graph database only)
-    
-- **Cassandra** (wide-column store)
-    
-- **PostgreSQL** (relational with some JSON support)
-    
+* Earliest form of data storage, stored in a single table.
+* Easy to implement, but locating data becomes difficult as it grows.
+* Highlights the need for more functional DBMS.
 
-**Big Difference:**
+### 2.2 Hierarchical Database
 
-- Arango DB uniquely combines **multiple data models natively**. You don’t need separate databases for documents, graphs, and search.
-    
+* Treelike structure: one parent record can have multiple child records.
+* Example: IBM's Information Management System.
 
----
+### 2.3 Network Database
 
-## 3. Setup & Environment (Target: ≤ 30 min on any OS)
+* Hierarchical model but child records can link to multiple parents.
+* Also called a graph model.
+* Example: Integrated Data Store.
 
-- **Install with Docker:**
-    
-    ```bash
-    docker run -e ARANGO_ROOT_PASSWORD=root -p 8529:8529 arangodb
-    ```
-    
-- Access Web UI → [http://localhost:8529](http://localhost:8529/)
-    
-- Log in with username: `root`, password: `root` (or your choice).
-    
+### 2.4 Object-Oriented Database
 
-**Checklist / Possible Issues:**
+* Stores data as objects (including methods, names, addresses).
+* Example: Berkeley DB software library.
 
-- Docker not installed → Provide instructions for Windows/Mac/Linux.
-    
-- Port conflicts on `8529` → Show how to change exposed port.
-    
-- Network/firewall issues → Use Docker Desktop network settings.
-    
+### 2.5 Relational Database
 
----
+* Most common type.
+* Data stored in tables (rows = records, columns = attributes).
+* Each record has a unique identity.
+* Relationships created using primary keys.
+* Examples: MySQL, PostgreSQL.
 
-## 4. Workshop Format
+### 2.6 NoSQL Database
 
--  **Keep it interactive** → no long lectures in a row.
-    
--  Encourage participants to:
-    
-    - Run commands themselves.
-        
-    - Share issues/errors.
-        
-    - Work in pairs for troubleshooting.
-        
--  Goal: everyone has a running DB and first queries within 30 minutes.
-    
+* Flexible, schema-less storage, often used for large-scale distributed data.
+* Types: Document stores, key-value stores, columnar, graph databases.
 
----
+### 2.7 Cloud-Based Database
 
-## 5. Exercises (Different Tiers)
+* Hosted on cloud platforms.
+* Provides scalability, reliability, and managed services.
 
-### Tier 1: Basics (Warm-up)
+## 3. Graph Databases
 
-- Create a **database** and a **collection**.
-    
-- Insert a few documents.
-    
-- Run a simple query.
-    
+* **Definition:** Networks of nodes and edges.
 
-### Tier 2: AQL Queries
+  * Nodes (vertices) = entities (person, book, sensor).
+  * Edges = relationships between nodes.
+* **Use cases:** Recommendation engines, fraud detection, knowledge graphs.
+* **Problem solved:** Provides an expressive model that aligns with human cognitive patterns, allowing semantic queries and analytics on connected data.
 
-- Filter documents by field.
-    
-- Sort results.
-    
-- Aggregate (e.g., count users > 30).
-    
+## 4. Introduction to ArangoDB
 
-### Tier 3: Graphs
+### 4.1 Key Facts
 
-- Create a graph with vertex + edge collections.
-    
-- Insert cities and flights.
-    
-- Query connections (1 or 2 hops).
-    
+* Initial release: 2011.
+* Written in C++.
+* Based in Germany.
+* Open-source with enterprise options.
+* Multi-model database: graph, document, key-value.
+* Can use RocksDB as a storage engine.
+* Offers web interface, containerized deployment, and JSON-based storage.
+* Flexible schema: collections can be schema-less by default.
 
-### Tier 4: Challenge (Optional)
+### 4.2 Why ArangoDB Exists
 
-- Build a **social network graph**.
-    
-- Query: find "friends-of-friends" of a user.
-    
-- Bonus: find shortest path between two users.
-    
+* Scalable graph database for connected data.
+* Combines analytical power of graphs with search engine, JSON support, vector indexes.
+* Unified query language (AQL) allows querying across multiple data models in a single request.
+* Reduces total cost of ownership by combining multiple data models into one engine.
 
----
+### 4.3 Use Cases & Relevance
 
-## 6. Wrap-Up
+* Flexible data access patterns for complex applications.
+* Supports hybrid workloads: documents, key-value, moderate-depth graph traversals.
+* Still relevant due to query flexibility, multi-model support, and developer productivity.
 
-- Recap of key concepts: multi-model, AQL, graphs.
-    
-- Discuss real-world use cases.
-    
-- Share resources:
-    
-    - [ArangoDB Docs](https://www.arangodb.com/docs/)
-        
-    - [AQL Tutorial](https://www.arangodb.com/learn/aql/)
-        
-    - [ArangoGraph Cloud](https://cloud.arangodb.com/)
-        
+### 4.4 Community Insights
+
+* Positive: JSON storage over HTTP, unified query language, avoiding custom API development.
+* Negative: Write-write conflicts under heavy load, engine crashes reported by some users.
+
+## 5. Competitors & Comparison
+
+### 5.1 Neo4j
+
+* Native property graph database.
+* Optimized for highly connected data and deep graph analytics.
+* Strong ACID transactions and enterprise governance.
+* Advanced Graph Data Science (GDS) capabilities.
+
+### 5.2 ArangoDB vs Neo4j
+
+| Feature        | ArangoDB                                       | Neo4j                                                 |
+| -------------- | ---------------------------------------------- | ----------------------------------------------------- |
+| Data Model     | Multi-model (documents, key-value, graphs)     | Native graph                                          |
+| Query Language | AQL (unified)                                  | Cypher (graph-focused)                                |
+| Performance    | Hybrid workloads, cross-shard traversal slower | Fast multi-hop traversals                             |
+| Scalability    | Horizontal scaling, SmartGraphs                | Causal clustering, Fabric federation                  |
+| Analytics      | Basic + Pregel                                 | Full GDS suite                                        |
+| Operations     | Simplified for multi-model                     | Strong governance for large graph-centric enterprises |
+
+### 5.3 Choosing the Right DB
+
+* **ArangoDB:** Use when graph is one component of a multi-model application; hybrid workflows; simpler operations.
+* **Neo4j:** Use when relationships are central; deep or complex graph traversals; advanced graph analytics; enterprise governance.
+
+## 6. Workshop Setup
+
+* Using containers for easy deployment and reset.
+* Pull latest ArangoDB version using `latest` tag.
+* Hands-on: storing JSON-based data, creating collections, adding edges to build a graph, running queries.
+
+## 7. Research & Presentation Focus
+
+* **Topics to cover:**
+
+  * Why ArangoDB exists and problem solved.
+  * Relevance and modern use cases.
+  * Competitor comparison.
+  * Advantages and drawbacks.
+  * Practical setup and usage (containers, collections, queries).
+* **References:** Use high-quality sources and provide links.
+* **Complexity:** Include both conceptual understanding and hands-on demonstration.
 
 ---
 
- By the end, participants should:
-
-1. Know what ArangoDB is and how it compares to others.
-    
-2. Be comfortable running it locally in Docker.
-    
-3. Have hands-on experience with collections, queries, and graphs.
-    
-4. Be inspired to explore further projects.
+This plan organizes the workshop from general database concepts to ArangoDB specifics, including context, comparisons, and practical exercises.
